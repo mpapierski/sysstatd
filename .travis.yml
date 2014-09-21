@@ -9,9 +9,16 @@ before_install:
 env:
   - BUILD_TYPE="Debug"
   - BUILD_TYPE="Release"
+matrix:
+  include:
+    - compiler: i586-mingw32msvc-gcc
+      env: OPTIONS="-DWIN32=ON -DMINGW=ON"
+      os: linux
+  allow_failures:
+    - compiler: i586-mingw32msvc-gcc
 script:
   - mkdir _build
   - cd _build
-  - cmake -DCMAKE_BUILD_TYPE="$BUILD_TYPE" ..
+  - cmake -DCMAKE_BUILD_TYPE="$BUILD_TYPE" $OPTIONS ..
   - cmake --build .
   - cmake --build . --target install
