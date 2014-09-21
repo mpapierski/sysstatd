@@ -7,8 +7,8 @@ void request_handler::operator()(const connection_type::pointer & ptr)
 	if (ptr->get_request_url() == "/")
 	{
 		Json::Value resources;
-		resources["/cpu"] = "CPU stats";
-		resources["/mem"] = "MEM stats";
+		resources["/cpu"] = "CPU usage";
+		resources["/mem"] = "Memory usage";
 		Json::Value res;
 		res["version"] = "1.0";
 		res["resources"] = resources;
