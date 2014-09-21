@@ -13,7 +13,13 @@ struct sigar_service
 	sigar_t *sigar_;
 	sigar_service(boost::asio::io_service & io_service);
 	void shutdown_service();
+	/**
+	 * Returns Json object with array of CPU usage per core
+	 */
 	Json::Value get_cpu_list(); // throws
+	/**
+	 * Returns object with memory usage informations
+	 */
 	Json::Value get_mem(); // throws
 };
 

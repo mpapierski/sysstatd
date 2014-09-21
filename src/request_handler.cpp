@@ -5,6 +5,7 @@
 void request_handler::operator()(const connection_type::pointer & ptr)
 {
 	std::cout << "URL: " << ptr->get_request_url() << std::endl;
+	// Resources
 	if (ptr->get_request_url() == "/")
 	{
 		Json::Value resources;
@@ -16,6 +17,7 @@ void request_handler::operator()(const connection_type::pointer & ptr)
 		ptr->send_response(200, res.toStyledString());
 		return;
 	}
+	// CPU usage
 	if (ptr->get_request_url() == "/cpu/")
 	{
 		Json::Value cpu_list = boost::asio::use_service<sigar_service>(ptr->get_socket().get_io_service())
@@ -23,6 +25,7 @@ void request_handler::operator()(const connection_type::pointer & ptr)
 		ptr->send_response(200, cpu_list.toStyledString());
 		return;
 	}
+	// Memory usage
 	if (ptr->get_request_url() == "/mem/")
 	{
 		Json::Value mem = boost::asio::use_service<sigar_service>(ptr->get_socket().get_io_service())
