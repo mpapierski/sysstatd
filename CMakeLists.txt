@@ -10,13 +10,24 @@ include_directories (
 	${CMAKE_CURRENT_SOURCE_DIR}/include/
 	${Boost_INCLUDE_DIRS}
 	${CMAKE_CURRENT_SOURCE_DIR}/deps/asio_http/include/
-	${CMAKE_CURRENT_SOURCE_DIR}/deps/jsoncpp/include/)
+	${CMAKE_CURRENT_SOURCE_DIR}/deps/jsoncpp/include/
+	${CMAKE_CURRENT_SOURCE_DIR}/deps/sigar/include/)
+
+set (SOURCES
+	src/main.cpp
+	src/request_handler.cpp
+	src/sigar_service.cpp)
+
+set (HEADERS
+	include/sysstatd/request_handler.hpp
+	include/sysstatd/sigar_service.hpp)
 
 add_executable (sysstatd
-	src/main.cpp
-	src/request_handler.cpp)
+	${SOURCES}
+	${HEADERS})
 target_link_libraries (sysstatd
 	asio_http
 	jsoncpp_lib
+	sigar
 	${Boost_LIBRARIES})
 
