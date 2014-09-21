@@ -1,0 +1,3 @@
+[submodule "deps/asio_http"]
+	path = deps/asio_http
+	url = git@github.com:mpapierski/asio_http.git
