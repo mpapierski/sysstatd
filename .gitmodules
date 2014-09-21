@@ -6,4 +6,4 @@
 	url = https://github.com/open-source-parsers/jsoncpp.git
 [submodule "deps/sigar"]
 	path = deps/sigar
-	url = https://github.com:hyperic/sigar.git
+	url = https://github.com/hyperic/sigar.git
