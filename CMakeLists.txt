@@ -30,4 +30,7 @@ target_link_libraries (sysstatd
 	jsoncpp_lib
 	sigar
 	${Boost_LIBRARIES})
-
+install (TARGETS sysstatd
+  RUNTIME DESTINATION bin
+  LIBRARY DESTINATION lib
+  ARCHIVE DESTINATION lib)
