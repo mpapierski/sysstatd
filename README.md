@@ -1,7 +1,11 @@
 # sysstatd
-====
 
-HTTP API for system resources. I found SNMP really complicated and for most uses I should calculate values on my own so I decided to implement HTTP API for this.
+HTTP API for querying system resources such as:
+
+	* CPU
+	* Memory
+	* Load
+	* Disk usage
 
 # Requirements
 
@@ -50,6 +54,6 @@ Array of CPU details as objects with following keys:
 
 MIT. See LICENSE.
 
-Authors
+# Authors
 
 * Michał Papierski <michal@papierski.net>
