@@ -19,6 +19,6 @@ matrix:
 script:
   - mkdir _build
   - cd _build
-  - cmake -DCMAKE_BUILD_TYPE="$BUILD_TYPE" $OPTIONS ..
+  - cmake -DCMAKE_INSTALL_PREFIX="../_install" -DCMAKE_BUILD_TYPE="$BUILD_TYPE" $OPTIONS ..
   - cmake --build .
   - cmake --build . --target install
