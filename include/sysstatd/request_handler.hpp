@@ -1,6 +1,7 @@
 #if !defined(SYSSTATD_REQUEST_HANDLER_HPP_INCLUDED)
 #define SYSSTATD_REQUEST_HANDLER_HPP_INCLUDED
 
+#include <iostream>
 #include <asio_http/http_server.hpp>
 
 struct request_handler
