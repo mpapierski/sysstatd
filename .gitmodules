@@ -1,9 +1,9 @@
 [submodule "deps/asio_http"]
 	path = deps/asio_http
-	url = git@github.com:mpapierski/asio_http.git
+	url = https://github.com/mpapierski/asio_http.git
 [submodule "deps/jsoncpp"]
 	path = deps/jsoncpp
-	url = git@github.com:open-source-parsers/jsoncpp.git
+	url = https://github.com/open-source-parsers/jsoncpp.git
 [submodule "deps/sigar"]
 	path = deps/sigar
-	url = git@github.com:hyperic/sigar.git
+	url = https://github.com:hyperic/sigar.git
