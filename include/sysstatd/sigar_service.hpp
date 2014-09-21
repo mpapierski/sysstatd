@@ -4,16 +4,17 @@
 #include <boost/asio.hpp>
 #include <boost/shared_ptr.hpp>
 #include "sigar.h"
+#include "json/json.h"
 
-struct stat_service
+struct sigar_service
 	: boost::asio::io_service::service
 {
 	static boost::asio::io_service::id id;
 	sigar_t *sigar_;
-	stat_service(boost::asio::io_service & io_service);
+	sigar_service(boost::asio::io_service & io_service);
 	void shutdown_service();
-	void get_cpu_list(sigar_cpu_list_t * cpulist); // throws
-	
+	Json::Value get_cpu_list(); // throws
+	Json::Value get_mem(); // throws
 };
 
 #endif
